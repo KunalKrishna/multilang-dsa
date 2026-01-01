@@ -9,12 +9,12 @@ public class StringDemo {
         String lit1 = "Namaste";
         String lit2 = "Namaste"; //Chec
 
-        int id1 = System.identityHashCode(lit1);
-        int id2 = System.identityHashCode(lit2);// ks SCP, if exists, reuse reference.
+        String hexAdd1 = getHexAddress(lit1);
+        String hexAdd2 = getHexAddress(lit2);// ks SCP, if exists, reuse reference.
 
         if ( lit1 == lit2 ) {
             System.out.println("The two strings are same literals in SCP");
-            System.out.println(id1 == id2);
+            System.out.println(hexAdd1 == hexAdd2);
         } else {
             System.out.println("The two literals are not SAME");
         }
@@ -23,8 +23,8 @@ public class StringDemo {
         String str1 = new String("Namaste"); // new forces new obj creation in main HEAP
         String str2 = new String("Namaste"); // again new obj in heap
 
-        int id3 = System.identityHashCode(str1);
-        int id4 = System.identityHashCode(str2);
+        String hexAdd3 = getHexAddress(str1);
+        String hexAdd4 = getHexAddress(str2);
 
 
         if ( lit1 == str1 ) {
@@ -34,13 +34,13 @@ public class StringDemo {
             System.out.println("Fresh String object is created. Literal not accessed when creating obj using new keyword");
             if ( lit1.equals(str1) ) { // true (Content is identical)
                 System.out.println("    Content of lit1 and str2 is same : "+ lit1);
-                System.out.println("    Their reference are same ? : " + (id3 == id4));
+                System.out.println("    Their reference are same ? : " + (hexAdd3 == hexAdd4));
             }
         }
-        System.out.println("id1 = " + id1 );
-        System.out.println("id2 = " + id2 );
-        System.out.println("id3 = " + id3 );
-        System.out.println("id4 = " + id4 );
+        System.out.println("hexAdd1 = " + hexAdd1 );
+        System.out.println("hexAdd2 = " + hexAdd2 );
+        System.out.println("hexAdd3 = " + hexAdd3 );
+        System.out.println("hexAdd4 = " + hexAdd4 );
 
 
 
@@ -73,5 +73,11 @@ public class StringDemo {
         // String s = "abc"; (one object)
 
 
+    }
+
+    static String getHexAddress(String u) {
+        int id = System.identityHashCode(u);
+        String hexAddress = Integer.toHexString(id);
+        return (u.getClass().getName() + "@" + hexAddress);
     }
 }
