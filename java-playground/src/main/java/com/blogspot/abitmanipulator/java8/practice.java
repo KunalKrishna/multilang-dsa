@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 /***
  *  Objective :
- *  1. Different ways to create string
+ *  1. Different ways to create string : https://www.geeksforgeeks.org/java/10-ways-to-create-a-stream-in-java/
  *      a. data source : Array, Collections(List, Set, Map), String(char stream),
  *      b. directly creating - for experiment
  *      c. from files
@@ -37,7 +37,7 @@ public class practice {
         Map<Character, Long> freqMap = str.chars()
                                         .mapToObj(ch -> (char) ch) // Box int to Character
                                         .collect(Collectors.groupingBy(
-                                            Function.identity(),  // Key : the character itself
+                                            Function.identity(),  // Key : the character itself, or simply write : ch -> ch
                                             Collectors.counting() // Value : count occurences
                                         ));
         System.out.println(freqMap);

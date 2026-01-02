@@ -1,0 +1,40 @@
+I. Mapping & FlatMapping (Handling Nested Data)
+1. Flatten List of Lists: Given List<List<Integer>>, flatten it into a single List<Integer> and sort it.
+2. Unique Words: Given a List<String> of sentences, return a list of all unique words used across all sentences.
+3. Cartesian Product: Given two lists [1, 2] and [3, 4], return all pairs [(1,3), (1,4), (2,3), (2,4)].
+4. Find Pairs: Find all pairs of numbers from two different lists whose sum is divisible by 3.
+5. Char Extraction: Convert a List<String> into a List<Character> containing all characters from all strings.
+
+II. Grouping & Collecting (The "Employee" Questions)
+Assume an Employee class with name, department, salary, and age.
+06. Group by Dept: Map employees by Department (Map<String, List<Employee>>).
+07. Count by Dept: Map Dept to employee count (Map<String, Long>).
+08. Sum Salary: Calculate the total salary of all employees in the "IT" department.
+09. Max Salary per Dept: Map Dept to the highest-paid employee in that Dept (Map<String, Optional<Employee>>).
+10. Partitioning: Split employees into two lists: those older than 30 and those 30 or younger (Map<Boolean, List<Employee>>).
+11. Name Mapping: Group by Department, but the value should be a List of Names only, not the whole Employee object.
+12. Complex Key: Group employees by Department, and within each Dept, group them by Age (Map<String, Map<Integer, List<Employee>>>).
+
+III. Finding & Matching
+13. First Non-Repeated: Find the first non-repeating character in a string.
+14. Second Highest: Find the second highest number in an array of integers.
+15. Longest String: Find the longest string in a list. If there is a tie, pick the first one found.
+16. Find Duplicate: Find elements that appear more than once in a list.
+17. Frequency Map: Create a map of character frequencies in a string (case-insensitive).
+18. Intersection: Find common elements between two Lists.
+19. Palindrome Check: Check if a String is a palindrome using streams.
+
+IV. Sorting & Maps
+20. Sort Map by Value: Given a Map<String, Integer>, return a list of keys sorted by their values (descending).
+21. Sort Employees: Sort a list of Employees by Salary (descending), then by Name (ascending).
+22. Array to Map: Convert an array of Strings to a Map where Key = String, Value = Length. Handle duplicate keys by keeping the first one.
+23. Merge Maps: Merge two Map<String, Integer> (e.g., inventory counts). If keys collide, sum the values.
+
+V. Advanced / Tricky (Hard)
+24. Custom Distinct: Filter a list of Persons to be distinct by name only (ignoring other fields).
+25. Zip Lists: "Zip" two lists together (combine index 0 with 0, 1 with 1) into a new object. (Note: Java Streams has no native .zip method).
+26. First Starting With X: Find the first string starting with "A". If none found, throw a custom NotFoundException.
+27. Infinite Stream: Generate an infinite stream of random numbers, but print the first 10 distinct numbers.
+28. Kth Smallest: Find the Kth smallest element in an unsorted array.
+29. Cumulative Sum: Transform [1, 2, 3, 4] into [1, 3, 6, 10]. (Note: This is hard because Streams are stateless).
+30. Fibonacci: Generate the first 20 numbers of the Fibonacci series.
