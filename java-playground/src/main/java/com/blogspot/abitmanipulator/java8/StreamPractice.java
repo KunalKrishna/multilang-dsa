@@ -1,6 +1,7 @@
 package com.blogspot.abitmanipulator.java8;
 
 import java.util.*;
+import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.stream.*;
 
@@ -32,7 +33,7 @@ public class StreamPractice {
         public int getAge() { return age; }
     }
 
-    static class Person {
+    static class Person  {
         String name;
         String email;
 
@@ -287,10 +288,17 @@ public class StreamPractice {
         int[] numbersArray = {5, 2, 9, 1, 6, 3, 9}; // Note duplicates
         List<Integer> numbersList = Arrays.asList(1, 2, 3, 4, 5);
 
+        System.out.println("--- Q14: Second Highest ---");
+        // 14. Second Highest: Find the second highest number in an array of integers.
+
         // --- For Q15 (Longest String) ---
         List<String> wordsList = Arrays.asList("apple", "banana", "kiwi", "pineapple", "pear");
 
+        //15. Longest String: Find the longest string in a list. If there is a tie, pick the first one found.
 
+        //16. Find Duplicate: Find elements that appear more than once in a list.
+        //17. Frequency Map: Create a map of character frequencies in a string (case-insensitive).
+        //18. Intersection: Find common elements between two Lists.
 
         // --- For Q20, Q23 (Maps) ---
         Map<String, Integer> map1 = new HashMap<>();
@@ -299,12 +307,25 @@ public class StreamPractice {
         Map<String, Integer> map2 = new HashMap<>();
         map2.put("B", 15); map2.put("C", 25); map2.put("D", 30);
 
+        //20. Sort Map by Value: Given a Map<String, Integer>, return a list of keys sorted by their values (descending).
+        //21. Sort Employees: Sort a list of Employees by Salary (descending), then by Name (ascending).
+        //22. Array to Map: Convert an array of Strings to a Map where Key = String, Value = Length. Handle duplicate keys by keeping the first one.
+        //23. Merge Maps: Merge two Map<String, Integer> (e.g., inventory counts). If keys collide, sum the values.
+
         // --- For Q24 (Custom Distinct) ---
-        List<Person> people = Arrays.asList(
-                new Person("John", "john@gmail.com"),
-                new Person("Jane", "jane@yahoo.com"),
-                new Person("John", "john@outlook.com") // Duplicate name, diff email
-        );
+//        List<Person> people = Arrays.asList(
+//                new Person("John", "john@gmail.com"),
+//                new Person("Jane", "jane@yahoo.com"),
+//                new Person("John", "john@outlook.com") // Duplicate name, diff email
+//        );
+
+        // 24. Custom Distinct: Filter a list of Persons to be distinct by name only (ignoring other fields).
+        //25. Zip Lists: "Zip" two lists together (combine index 0 with 0, 1 with 1) into a new object. (Note: Java Streams has no native .zip method).
+        //26. First Starting With X: Find the first string starting with "A". If none found, throw a custom NotFoundException.
+        //27. Infinite Stream: Generate an infinite stream of random numbers, but print the first 10 distinct numbers.
+        //28. Kth Smallest: Find the Kth smallest element in an unsorted array.
+        //29. Cumulative Sum: Transform [1, 2, 3, 4] into [1, 3, 6, 10]. (Note: This is hard because Streams are stateless).
+        //30. Fibonacci: Generate the first 20 numbers of the Fibonacci series.
 
         // ==========================================
         // YOUR CODE GOES BELOW
@@ -320,7 +341,6 @@ public class StreamPractice {
                 .limit(5)
                 .forEach(System.out::println);
 
-        //
 
     }
 }
