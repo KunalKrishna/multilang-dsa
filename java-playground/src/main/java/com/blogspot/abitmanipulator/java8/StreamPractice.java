@@ -276,13 +276,11 @@ public class StreamPractice {
                 ));
         charFreqMap.entrySet().stream().forEach(System.out::println);
 
-
         System.out.println("--- Q19: Palindrome Check ---");
         // Palindrome Check: Check if a String is a palindrome using streams.
         boolean isPalindrome = IntStream.rangeClosed(1, palindromeCheck.length() / 2)
                 .noneMatch(i -> palindromeCheck.charAt(i - 1) != palindromeCheck.charAt(palindromeCheck.length() - i));
         System.out.println(palindromeCheck+ " isPalindrome: " + isPalindrome);
-
 
         // --- For Q14, Q28, Q29 (Numbers/Arrays) ---
         int[] numbersArray = {5, 2, 9, 1, 6, 3, 9}; // Note duplicates
@@ -340,6 +338,8 @@ public class StreamPractice {
                 .mapToInt(d-> d.intValue())
                 .limit(5)
                 .forEach(System.out::println);
+        //TODO
+        // https://medium.com/@veenaraofr/java8-stream-api-commonly-asked-questions-about-employee-highest-salary-99c21cec4d98
 
 
     }
